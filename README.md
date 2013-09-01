@@ -8,7 +8,7 @@
     2.    cd .vim
     3.    git submodule init
     4.    git submodule update
-    5. execute the Install.sh will override your .vimrc by openvims .vimrc
+    5.    execute the Install.sh will override your .vimrc by openvims .vimrc
 
 ##插件管理
 ####新增Vim插件, 使用如下命令
@@ -26,13 +26,29 @@
 
     <leader> = ,   
 ####Conque-Shell 
+
+    在Vim中打开Terminal的插件
+    :ConqueTerm bash 打开终端
+    :ConqueTermSplit 分隔窗口方式打开终端 
+    
 ####OmniCppComplete
+    
+    C/C++代码自动补全增强插件
+
 ####checksyntax_vim
 
     语法检查插件
     F5 启用检查(文件保存后自动检查)
     
 ####cscope
+    
+    语法标签生成,代码阅读插件
+    F6 生成当前项目的语法标签(cscope -bkq)
+    <C + ]> 跳转定义
+    <C + t> 跳转上一步
+    <C + ->g: 查找函数定义
+    <C + ->d: 查找函数调用
+    
 ####easygrep
 
     关键字查找插件
@@ -40,6 +56,10 @@
     
 ####file-line
 ####fuzzyfinder
+    
+    文件查找插件(支持通配符) 
+    F4 开启
+    
 ####nerdcommenter
 
     用来给代码添加注释
@@ -70,7 +90,13 @@
     
     代码自动提醒插件
 ####tabular
+
+    文本对齐插件
+    :Tab /=  按等号对齐
 ####tagbar
+    
+    标签阅读插件(兼容面向对象语言)
+    F3 显示/关闭
 ####vcscommand
     
     版本控制插件(支持Git,Svn)
@@ -88,3 +114,5 @@
 
 ####vim-l9
 ####vim-powerline
+    
+    状态栏增强插件
