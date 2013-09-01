@@ -34,8 +34,15 @@ let NERDCompactSexyComs=1
 let NERDSpaceDelims=1
 
 map <F2> :silent! NERDTreeToggle<CR>
-map <F8> :silent! TagbarToggle<CR>
-map <F9> :silent! FufCoverageFile<CR>
+
+" TagbarToggle
+map <F3> :silent! TagbarToggle<CR>
+
+"FulCoverageFile
+map <F4> :silent! FufCoverageFile<CR>
+
+" NERDCommand
+let mapleader=","
 
 " 配色方案
 if has("gui_running")
