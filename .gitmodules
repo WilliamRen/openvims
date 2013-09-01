@@ -43,9 +43,6 @@
 [submodule "bundle/cscope"]
 	path = bundle/cscope
 	url = https://github.com/vim-scripts/cscope.vim.git
-[submodule "bundle/YouCompleteMe"]
-	path = bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe
 [submodule "bundle/checksyntax_vim"]
 	path = bundle/checksyntax_vim
 	url = https://github.com/tomtom/checksyntax_vim.git
