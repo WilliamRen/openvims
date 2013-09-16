@@ -4,7 +4,7 @@
 
 ##安装步骤
 
-    1.    git clone https://github.com/shenyubao/openvims.git .vim
+    1.    git clone https://github.com/Shenyubao/openvims.git .vim
     2.    cd .vim
     3.    git submodule init
     4.    git submodule update
