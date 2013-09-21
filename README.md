@@ -3,7 +3,8 @@
 一个针对 PHP / Python / C 开发人员的Vim脚本
 
 ##安装步骤
-
+    
+    0.    cd ~
     1.    git clone https://github.com/Shenyubao/openvims.git .vim
     2.    cd .vim
     3.    git submodule init
