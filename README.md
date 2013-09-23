@@ -2,8 +2,11 @@
 
 一个针对 PHP / Python / C 开发人员的Vim脚本
 
-##安装步骤
-    
+##安装
+###版本要求
+    要求VIM >=7.3 , 低版本请执行 Vim74Install.sh 进行安装.
+
+###安装步骤
     0.    cd ~
     1.    git clone https://github.com/Shenyubao/openvims.git .vim
     2.    cd .vim
@@ -19,13 +22,17 @@
 ####删除Vim插件, 使用如下命令
 
     1.git rm -r --cache bundle/nerdcommenter
-    2.rm -rf --cache bundle/nerdcommenter
+    2.rm -rf bundle/nerdcommenter
     3.修改.gitmodules ,删除相关节点
 
 ##插件使用说明    
 ####默认配置
 
-    <leader> = ,   
+    <leader> = ,   :下文中的<leader> 用此替代符
+    <C + t> : 下一个标签
+    <C + n> : 打开新的标签
+    <C + c> : 关闭当前标签
+    
 ####Conque-Shell 
 
     在Vim中打开Terminal的插件
@@ -44,11 +51,13 @@
 ####cscope
     
     语法标签生成,代码阅读插件
-    F6 生成当前项目的语法标签(cscope -bkq)
+    F6 生成当前目录的语法标签 (只跟踪 .php .phtml .java .c .cpp .h)文件
     <C + ]> 跳转定义
     <C + t> 跳转上一步
-    <C + ->g: 查找函数定义
-    <C + ->d: 查找函数调用
+    <C + g> g: 查找函数定义
+    <C + g> d: 查找函数调用
+    <C + g> s: 查找所有出现处
+    <C + g> c: 查找调用记录
     
 ####easygrep
 
@@ -76,6 +85,10 @@
     F2 开启/关闭
     ?  打开帮助
     B  显示/关闭书签
+    D  删除书签
+    F5 给当前目录创建标签
+    R  更新当前目录
+    t  在新标签中打开当前文件
     
 ####snipMate
     

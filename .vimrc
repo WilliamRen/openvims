@@ -20,6 +20,7 @@ set mouse=a
 set writebackup
 
 syntax enable
+set nocp
 set background=dark
 colorscheme solarized
 
@@ -32,11 +33,12 @@ let NERDTreeMouseMode=2
 let NERDTreeHighlightCursorline=0
 let NERDCompactSexyComs=1
 let NERDSpaceDelims=1
+let NERDTreeShowBookmarks=1
 
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
+"nmap <C-h> <C-w>h
+"nmap <C-j> <C-w>j
+"nmap <C-k> <C-w>k
+"nmap <C-l> <C-w>l
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | end  " Auto Exit
 
@@ -48,11 +50,16 @@ map <F3> :silent! TagbarToggle<CR>
 " FulCoverageFile
 map <F4> :silent! FufCoverageFile<CR>
 
-" CheckSync
-map <F5> :CheckSyntax <CR>
+" NerdTree Book Mark
+map <F5> :Bookmark <CR>
 
 " Cscope
-map <F6> :! cscope -Rbq<CR>:cs reset<CR>
+map <F6> :!find . -name '*.php' -o -name '*.c' -o -name '*.h' -o -name '*.cpp' -o -name '*.java' -o -name '*.phtml' -name '*.ini' >cscope.files && cscope -bq<CR>:cs reset<CR>:cs add cscope.out<CR>
+
+"Tab Operator
+map <C-t> :tabn<CR>
+map <C-c> :tabc<CR>
+map <C-n> :tabnew<CR>
 
 " NERDCommand
 let mapleader=","
@@ -67,25 +74,22 @@ let g:SuperTabDefaultCompletionType="<C-X><C-O>"
 set ofu=syntaxcomplete#Complete
 set completeopt=menu,longest
 
-
 " Cscope
-if has("cscope")
-    set cscopetag 
-    set csto=1
-    if filereadable("cscope.out")  
-        cs add cscope.out
-    endif
-
-    set cscopeverbose
-    nmap <C-_>s :cs find s <C-R>=expand("<cword>")<CR><CR>      
-    nmap <C-_>g :cs find g <C-R>=expand("<cword>")<CR><CR>      
-    nmap <C-_>c :cs find c <C-R>=expand("<cword>")<CR><CR>      
-    nmap <C-_>t :cs find t <C-R>=expand("<cword>")<CR><CR>     
-    nmap <C-_>e :cs find e <C-R>=expand("<cword>")<CR><CR>     
-    nmap <C-_>f :cs find f <C-R>=expand("<cfile>")<CR><CR>     
-    nmap <C-_>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>   
-    nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR>     
+set cscopequickfix=s-,c-,d-,i-,t-,e-
+set cscopetag 
+set csto=1
+if filereadable("cscope.out")  
+  cs add cscope.out
 endif
+set cscopeverbose
+map <C-g>s :cs find s <C-R>=expand("<cword>")<CR><CR>:copen<CR>      
+map <C-g>g :cs find g <C-R>=expand("<cword>")<CR><CR>:copen<CR>     
+map <C-g>c :cs find c <C-R>=expand("<cword>")<CR><CR>:copen<CR>   
+map <C-g>t :cs find t <C-R>=expand("<cword>")<CR><CR>:copen<CR>
+map <C-g>e :cs find e <C-R>=expand("<cword>")<CR><CR>:copen<CR>     
+map <C-g>f :cs find f <C-R>=expand("<cfile>")<CR><CR>:copen<CR>
+map <C-g>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>:copen<CR>   
+map <C-g>d :cs find d <C-R>=expand("<cword>")<CR><CR>:copen<CR>   
 
 " 配色方案
 if has("gui_running")
