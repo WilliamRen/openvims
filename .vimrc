@@ -55,6 +55,7 @@ map <F4> :silent! FufCoverageFile<CR>
 
 " NerdTree Book Mark
 map <F5> :Bookmark <CR>
+let NERDTreeIgnore=['cscope\.*','\.svn','\.git','\.o']
 
 " Cscope
 map <F6> :!find . -name '*.php' -o -name '*.c' -o -name '*.h' -o -name '*.cpp' -o -name '*.java' -o -name '*.phtml' -name '*.ini' >cscope.files && cscope -bq<CR>:cs reset<CR>:cs add cscope.out<CR>
