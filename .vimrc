@@ -42,6 +42,9 @@ let NERDTreeShowBookmarks=1
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | end  " Auto Exit
 
+" NERDCommand
+let mapleader=","
+
 map <F2> :silent! NERDTreeToggle<CR>
 
 " TagbarToggle
@@ -61,6 +64,8 @@ map <C-c> :MBEbd<CR>
 map <C-n> :MBEbn<CR>
 map <C-b> :MBEbp<CR>
 
+"Gundo 
+map <leader>h :GundoToggle<CR>
 
 " NERDCommand
 let mapleader=","
@@ -91,6 +96,23 @@ map <C-g>e :cs find e <C-R>=expand("<cword>")<CR><CR>:copen<CR>
 map <C-g>f :cs find f <C-R>=expand("<cfile>")<CR><CR>:copen<CR>
 map <C-g>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>:copen<CR>   
 map <C-g>d :cs find d <C-R>=expand("<cword>")<CR><CR>:copen<CR>   
+
+" 相对行号
+set relativenumber
+au FocusLost * :set number
+au FocusGained * :set relativenumber
+" 插入模式下用绝对行号, 普通模式下用相对
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
+nnoremap <C-r> :call NumberToggle()<cr>
+
 
 " 配色方案
 if has("gui_running")

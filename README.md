@@ -33,6 +33,8 @@
     <C + n> : 打开下一个buff
     <C + b> : 打开前一个buff
     
+    <C + r> : 相对行号/绝对行号的控制
+    <C + h> : 文件时光机功能
 ####Conque-Shell 
 
     在Vim中打开Terminal的插件
