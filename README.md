@@ -29,9 +29,9 @@
 ####默认配置
 
     <leader> = ,   :下文中的<leader> 用此替代符
-    <C + t> : 下一个标签
-    <C + n> : 打开新的标签
-    <C + c> : 关闭当前标签
+    <C + c> : 关闭当前buff
+    <C + n> : 打开下一个buff
+    <C + b> : 打开前一个buff
     
 ####Conque-Shell 
 

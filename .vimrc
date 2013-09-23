@@ -56,10 +56,11 @@ map <F5> :Bookmark <CR>
 " Cscope
 map <F6> :!find . -name '*.php' -o -name '*.c' -o -name '*.h' -o -name '*.cpp' -o -name '*.java' -o -name '*.phtml' -name '*.ini' >cscope.files && cscope -bq<CR>:cs reset<CR>:cs add cscope.out<CR>
 
-"Tab Operator
-map <C-t> :tabn<CR>
-map <C-c> :tabc<CR>
-map <C-n> :tabnew<CR>
+" MiniBuffer
+map <C-c> :MBEbd<CR>
+map <C-n> :MBEbn<CR>
+map <C-b> :MBEbp<CR>
+
 
 " NERDCommand
 let mapleader=","
